@@ -1,5 +1,5 @@
 .header {
-    color: var(--default-color);
+    color: #0067BB;
     background-color: var(--background-color);
     padding: 15px 0;
     transition: all 0.5s;
@@ -8,11 +8,11 @@
   
   .header .logo {
     line-height: 1;
-  }
+  } 
   
   .header .logo img {
-    max-height: 36px;
-    margin-right: 8px;
+    max-height: 70px;
+    margin-right: 20px;
   }
   
   .header .logo h1 {
@@ -35,11 +35,21 @@
     transition: 0.3s;
   }
   
-  .header .btn-getstarted:hover,
+  /* .header .btn-getstarted:hover,
   .header .btn-getstarted:focus:hover {
     color: var(--contrast-color);
     background: color-mix(in srgb, var(--accent-color), transparent 15%);
-  }
+  } */
+  .header .btn-getstarted {
+    color: #fff; /* Set the text color */
+    background-color: #0067BB; /* Initial background color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus {
+    background-color: hsl(208, 100%, 60%); /* Lighter shade of #0067BB */
+}
   
   @media (max-width: 1200px) {
     .header .logo {
@@ -107,11 +117,51 @@
       padding-right: 0;
     }
   
-    .navmenu li:hover>a,
+    /* .navmenu li:hover>a,
     .navmenu .active,
     .navmenu .active:focus {
       color: var(--nav-hover-color);
-    }
+    } */
+
+    .navmenu li > a {
+      color: #0067BB; /* Default color */
+      transition: color 0.3s ease; /* Smooth transition for color change */
+  }
+  
+  .navmenu li > a {
+    color: #0067BB; /* Default color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.navmenu li > a {
+  color: #0067BB; /* Default color */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color and background transition */
+  position: relative; /* Required for pseudo-elements */
+}
+
+.navmenu li:hover > a,
+.navmenu .active > a,
+.navmenu .active:focus > a {
+  color: hsl(208, 100%, 60%); /* Lighter shade of #0067BB on hover or active */
+  background-color: rgba(0, 103, 187, 0.1); /* Optional light background on hover */
+}
+
+/* Optional underline animation */
+.navmenu li > a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: hsl(208, 100%, 60%);
+  transition: width 0.3s ease; /* Smooth width transition */
+}
+
+.navmenu li:hover > a::after,
+.navmenu .active > a::after {
+  width: 100%; /* Underline expands to full width on hover or active */
+}
   
     .navmenu .dropdown ul {
       margin: 0;
